@@ -10,4 +10,4 @@ def find_attr(f_name, built_in_lib):
     result is quote
     '''
     r = filter(lambda b: b.startswith(f_name), dir(built_in_lib))
-    return ''.join(r) if r else None
+    return r if r else None
