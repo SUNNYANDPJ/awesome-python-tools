@@ -2,5 +2,12 @@
 # encoding: utf-8
 
 
-def function_exists(f_name, built_in_lib):
-    return f_name in filter(lambda b: b.startswith(f_name), dir(built_in_lib))
+def find_attr(f_name, built_in_lib):
+    '''
+    import urllib2
+    ast.find_attr('q', urllib2)
+
+    result is quote
+    '''
+    r = filter(lambda b: b.startswith(f_name), dir(built_in_lib))
+    return ''.join(r) if r else None
